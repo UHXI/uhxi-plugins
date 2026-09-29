@@ -1,0 +1,11 @@
+{
+  "$comment": "Copiar para <repositório>/.claude/settings.json em projectos onde queiras que quem clona seja convidado a instalar o setup UHXI_lab. Apenas o essencial; o resto vem do âmbito de utilizador.",
+  "extraKnownMarketplaces": {
+    "uhxi": {
+      "source": { "source": "github", "repo": "UHXI/uhxi-plugins" }
+    }
+  },
+  "enabledPlugins": {
+    "uhxi-core@uhxi": true
+  }
+}
