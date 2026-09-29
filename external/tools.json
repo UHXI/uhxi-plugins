@@ -1,0 +1,55 @@
+{
+  "$comment": "Ferramentas que NÃO são plugins Claude Code (CLIs, skills instaladas por comando). O bootstrap percorre esta lista: verifica 'check', corre 'install' para o SO, depois 'register'. 'requires' são pré-requisitos verificados antes.",
+  "tools": [
+    {
+      "id": "uv",
+      "description": "Gestor de ferramentas Python (astral.sh). Pré-requisito do graphify.",
+      "check": "uv --version",
+      "install": {
+        "linux": "curl -LsSf https://astral.sh/uv/install.sh | sh",
+        "darwin": "curl -LsSf https://astral.sh/uv/install.sh | sh",
+        "windows": "winget install --id astral-sh.uv -e --accept-source-agreements --accept-package-agreements"
+      },
+      "post_install_note": "Se 'uv' não for encontrado a seguir, abrir um novo terminal ou correr: uv tool update-shell"
+    },
+    {
+      "id": "graphify",
+      "description": "Graphify — grafo de conhecimento consultável sobre código, docs, PDFs. Instala a skill /graphify no Claude Code. https://github.com/Graphify-Labs/graphify",
+      "requires": ["uv"],
+      "check": "graphify --version",
+      "install": {
+        "linux": "uv tool install \"graphifyy[pdf,office]\"",
+        "darwin": "uv tool install \"graphifyy[pdf,office]\"",
+        "windows": "uv tool install \"graphifyy[pdf,office]\""
+      },
+      "upgrade": "uv tool upgrade graphifyy",
+      "register": "graphify install",
+      "register_project": "graphify install --project",
+      "notes": [
+        "O pacote PyPI chama-se 'graphifyy' (duplo y); o comando é 'graphify'.",
+        "Em PowerShell usar 'graphify .' em vez de '/graphify .'.",
+        "Em Windows ARM64 confirmar que existem wheels tree-sitter para a versão de Python; se falhar, usar Python x64 via uv: uv python install 3.12 --arch x86_64 (a testar).",
+        "Adicionar 'graphify-out/' e 'graph.json' ao .claudeignore de cada projecto para não invalidar a cache de prompts."
+      ]
+    },
+    {
+      "id": "omniroute",
+      "optional": true,
+      "description": "OmniRoute — gateway local de IA (MIT) com auto-fallback entre fornecedores e compressão de tokens. https://github.com/diegosouzapw/OmniRoute. Só instala com --all-tools / -AllTools; nunca é activado automaticamente.",
+      "requires": ["npm"],
+      "check": "omniroute --version",
+      "install": {
+        "linux": "npm i -g omniroute",
+        "darwin": "npm i -g omniroute",
+        "windows": "npm i -g omniroute"
+      },
+      "upgrade": "npm i -g omniroute@latest",
+      "notes": [
+        "Arrancar com 'omniroute' (porta 20128); alternativa Docker: docker run -p 20128:20128 diegosouzapw/omniroute; existe app Desktop nos Releases.",
+        "Activação POR SESSÃO, nunca global: ANTHROPIC_BASE_URL=http://localhost:20128/v1 claude   (PowerShell: $env:ANTHROPIC_BASE_URL='http://localhost:20128/v1'; claude).",
+        "Com a variável definida, todos os prompts e ficheiros da sessão passam pelo gateway e pelos fornecedores para onde ele encaminha; não usar em projectos com dados de clientes ou sob NDA/RGPD sem avaliar isso.",
+        "Não afecta as sessões claude.ai/Cowork nem os conectores; só o Claude Code local."
+      ]
+    }
+  ]
+}
