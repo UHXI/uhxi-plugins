@@ -1,0 +1,11 @@
+{
+  "name": "uhxi-core",
+  "version": "1.0.0",
+  "description": "Skills próprias da UHXI_lab. Inclui /uhxi-core:uhxi-sync, que instala e actualiza o marketplace 'uhxi' e as ferramentas externas (graphify, etc.) no ambiente actual.",
+  "author": {
+    "name": "César Augusto Lopes",
+    "email": "cal@uhxilab.com",
+    "url": "https://uhxilab.com"
+  },
+  "keywords": ["uhxi", "setup", "sync", "bootstrap"]
+}
