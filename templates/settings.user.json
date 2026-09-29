@@ -1,0 +1,60 @@
+{
+  "$comment": "Fragmento a fundir em ~/.claude/settings.json (o bootstrap faz esta fusão automaticamente). Marketplaces conhecidos e plugins que devem estar activos em todos os projectos deste utilizador.",
+  "extraKnownMarketplaces": {
+    "uhxi": {
+      "source": {
+        "source": "github",
+        "repo": "UHXI/uhxi-plugins"
+      }
+    },
+    "knowledge-work-plugins": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/knowledge-work-plugins"
+      }
+    },
+    "addy-agent-skills": {
+      "source": {
+        "source": "github",
+        "repo": "addyosmani/agent-skills"
+      }
+    },
+    "ponytail": {
+      "source": {
+        "source": "github",
+        "repo": "DietrichGebert/ponytail"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "uhxi-core@uhxi": true,
+    "claude-memory@uhxi": true,
+    "emem@uhxi": true,
+    "claude-md-optimizer@uhxi": true,
+    "claude-time@uhxi": true,
+    "nvidia-skills@uhxi": false,
+    "cowork-mem@uhxi": true,
+    "claude-pace@uhxi": false,
+    "claudemeter@uhxi": true,
+    "dataverse@uhxi": true,
+    "claude-patterns@uhxi": true,
+    "claude-performance@uhxi": true,
+    "claude-md-management@claude-plugins-official": true,
+    "claude-security@claude-plugins-official": true,
+    "agent-skills@addy-agent-skills": true,
+    "ponytail@ponytail": true,
+    "productivity@knowledge-work-plugins": true,
+    "product-management@knowledge-work-plugins": true,
+    "design@knowledge-work-plugins": true,
+    "data@knowledge-work-plugins": true,
+    "enterprise-search@knowledge-work-plugins": true,
+    "marketing@knowledge-work-plugins": true,
+    "sales@knowledge-work-plugins": true,
+    "legal@knowledge-work-plugins": true,
+    "finance@knowledge-work-plugins": true,
+    "human-resources@knowledge-work-plugins": true,
+    "customer-support@knowledge-work-plugins": true,
+    "pdf-viewer@knowledge-work-plugins": true,
+    "cowork-plugin-management@knowledge-work-plugins": true
+  }
+}
