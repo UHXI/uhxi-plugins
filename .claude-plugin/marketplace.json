@@ -1,0 +1,87 @@
+{
+  "name": "uhxi",
+  "owner": {
+    "name": "César Augusto Lopes — UHXI_lab",
+    "email": "cal@uhxilab.com",
+    "url": "https://uhxilab.com"
+  },
+  "metadata": {
+    "description": "Marketplace pessoal da UHXI_lab: plugins próprios e plugins de terceiros reunidos num único ponto de instalação.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "uhxi-core",
+      "source": "./plugins/uhxi-core",
+      "description": "Skills próprias da UHXI_lab, incluindo /uhxi-core:uhxi-sync para sincronizar este marketplace e as ferramentas externas em qualquer ambiente.",
+      "version": "1.0.0",
+      "category": "productivity"
+    },
+    {
+      "name": "claude-memory",
+      "source": { "source": "github", "repo": "tars23364-bit/claude-memory" },
+      "description": "Memória estruturada para Claude Code (recall/remember, injecção no arranque).",
+      "category": "memory"
+    },
+    {
+      "name": "emem",
+      "source": { "source": "github", "repo": "Vortx-AI/emem" },
+      "description": "Memória partilhada verificável entre agentes (observações assinadas, tokens).",
+      "category": "memory"
+    },
+    {
+      "name": "claude-md-optimizer",
+      "source": { "source": "github", "repo": "wrsmith108/claude-md-optimizer" },
+      "description": "Optimiza CLAUDE.md / AGENTS.md com divulgação progressiva.",
+      "category": "devtools"
+    },
+    {
+      "name": "claude-time",
+      "source": { "source": "github", "repo": "nexusbuildsai/claude-time" },
+      "description": "Injecta a hora local em cada prompt e carimba as respostas.",
+      "category": "productivity"
+    },
+    {
+      "name": "nvidia-skills",
+      "source": { "source": "github", "repo": "NVIDIA/skills" },
+      "description": "Skills NVIDIA (CUDA, NIM, NeMo, Omniverse, Jetson).",
+      "category": "ai"
+    },
+    {
+      "name": "cowork-mem",
+      "source": { "source": "github", "repo": "MSApps-Mobile/claude-plugins" },
+      "description": "Memória persistente entre sessões Cowork. NOTA: repositório mono-plugin; se a validação falhar, trocar por git-subdir com o caminho do plugin.",
+      "category": "memory"
+    },
+    {
+      "name": "claude-pace",
+      "source": { "source": "github", "repo": "Astro-Han/claude-pace" },
+      "description": "Barra de estado com ritmo de utilização.",
+      "category": "productivity"
+    },
+    {
+      "name": "claudemeter",
+      "source": { "source": "github", "repo": "arifbsmrstu/claudemeter" },
+      "description": "Medidor de utilização e contexto na barra de estado.",
+      "category": "productivity"
+    },
+    {
+      "name": "dataverse",
+      "source": { "source": "github", "repo": "microsoft/Dataverse-skills" },
+      "description": "Skills Microsoft Dataverse / Power Platform / Dynamics 365.",
+      "category": "enterprise"
+    },
+    {
+      "name": "claude-patterns",
+      "source": { "source": "github", "repo": "adelaidasofia/claude-patterns" },
+      "description": "Instinct Engine: detecta padrões recorrentes em sessões e converte-os em regras.",
+      "category": "devtools"
+    },
+    {
+      "name": "claude-performance",
+      "source": { "source": "github", "repo": "adelaidasofia/claude-performance" },
+      "description": "Relatório semanal de eficácia das sessões Claude Code.",
+      "category": "devtools"
+    }
+  ]
+}
